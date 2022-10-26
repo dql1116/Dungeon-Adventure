@@ -1,0 +1,208 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://start-assets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://all/blue_L2.png" type="Texture" id=3]
+[ext_resource path="res://Levels/Level_1.gd" type="Script" id=4]
+[ext_resource path="res://TutorialEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Key2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Portal2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://all/blue_L4.png" type="Texture" id=8]
+[ext_resource path="res://Sound/BGM/cave_theme_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://all/blue_L3.png" type="Texture" id=10]
+[ext_resource path="res://all/blue_L1.png" type="Texture" id=11]
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 770, 467.5 )
+scale = Vector2( 2.40313, 3.74 )
+texture = ExtResource( 11 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 771, 467.5 )
+scale = Vector2( 2.40313, 3.724 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 771, 470 )
+scale = Vector2( 2.40313, 3.744 )
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 769, 465 )
+scale = Vector2( 2.4, 3.72 )
+texture = ExtResource( 8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -393217, 10, 0, -458704, 10, 0, -327681, 10, 0, -393168, 10, 0, -262145, 10, 0, -327632, 10, 0, -196609, 10, 0, -262096, 10, 0, -131073, 10, 0, -196560, 10, 0, -65537, 10, 0, -131024, 10, 0, -1, 10, 0, -65488, 10, 0, 65535, 10, 0, 48, 10, 0, 131071, 10, 0, 65584, 10, 0, 196607, 10, 0, 131120, 10, 0, 262143, 10, 0, 196656, 10, 0, 327679, 10, 0, 262192, 10, 0, 393215, 10, 0, 327728, 10, 0, 458751, 10, 0, 393216, 9, 0, 393217, 9, 0, 393218, 9, 0, 393219, 9, 0, 393220, 9, 0, 393221, 9, 0, 393222, 9, 0, 393223, 9, 0, 393224, 9, 0, 393225, 9, 0, 393226, 9, 0, 393227, 9, 0, 393228, 9, 0, 393229, 9, 0, 393230, 9, 0, 393231, 9, 0, 393232, 9, 0, 393233, 9, 0, 393234, 9, 0, 393235, 9, 0, 393236, 9, 0, 393237, 9, 0, 393238, 9, 0, 393239, 9, 0, 393240, 9, 0, 393241, 9, 0, 393242, 9, 0, 393243, 9, 0, 393244, 9, 0, 393245, 9, 0, 393246, 9, 0, 393247, 9, 0, 393248, 9, 0, 393249, 9, 0, 393250, 9, 0, 393251, 9, 0, 393252, 9, 0, 393253, 9, 0, 393254, 9, 0, 393255, 9, 0, 393256, 9, 0, 393257, 9, 0, 393258, 12, 0, 393264, 10, 0, 524287, 10, 0, 458800, 10, 0, 589823, 10, 0, 524336, 10, 0, 655359, 10, 0, 589872, 10, 0, 720895, 10, 0, 655408, 10, 0, 786431, 10, 0, 720944, 10, 0, 851967, 10, 0, 786480, 10, 0, 917503, 10, 0, 851972, 14, 0, 851973, 9, 0, 851974, 9, 0, 851975, 9, 0, 851976, 9, 0, 851977, 9, 0, 851978, 9, 0, 851979, 9, 0, 851980, 9, 0, 851981, 9, 0, 851982, 9, 0, 851983, 9, 0, 851984, 9, 0, 851985, 9, 0, 851986, 9, 0, 851987, 9, 0, 851988, 9, 0, 851989, 9, 0, 851990, 9, 0, 851991, 9, 0, 851992, 9, 0, 851993, 9, 0, 851994, 9, 0, 851995, 9, 0, 851996, 9, 0, 851997, 9, 0, 851998, 9, 0, 851999, 9, 0, 852000, 9, 0, 852001, 9, 0, 852002, 9, 0, 852003, 9, 0, 852004, 9, 0, 852005, 9, 0, 852006, 9, 0, 852007, 9, 0, 852008, 9, 0, 852009, 9, 0, 852010, 9, 0, 852011, 9, 0, 852012, 9, 0, 852013, 9, 0, 852014, 9, 0, 852015, 9, 0, 852016, 10, 0, 983039, 10, 0, 917552, 10, 0, 1048575, 10, 0, 983088, 10, 0, 1114111, 10, 0, 1048624, 10, 0, 1179647, 10, 0, 1114160, 10, 0, 1245183, 10, 0, 1179696, 10, 0, 1310719, 10, 0, 1245232, 10, 0, 1376255, 10, 0, 1310720, 9, 0, 1310721, 9, 0, 1310722, 9, 0, 1310723, 9, 0, 1310724, 9, 0, 1310725, 9, 0, 1310726, 9, 0, 1310727, 9, 0, 1310728, 9, 0, 1310729, 9, 0, 1310730, 9, 0, 1310731, 9, 0, 1310732, 9, 0, 1310733, 9, 0, 1310734, 9, 0, 1310735, 9, 0, 1310736, 9, 0, 1310737, 9, 0, 1310738, 9, 0, 1310739, 9, 0, 1310740, 9, 0, 1310741, 9, 0, 1310742, 9, 0, 1310743, 9, 0, 1310744, 9, 0, 1310745, 9, 0, 1310746, 9, 0, 1310747, 9, 0, 1310748, 9, 0, 1310749, 9, 0, 1310750, 9, 0, 1310751, 9, 0, 1310752, 9, 0, 1310753, 9, 0, 1310754, 9, 0, 1310755, 9, 0, 1310756, 9, 0, 1310757, 9, 0, 1310758, 9, 0, 1310759, 9, 0, 1310760, 9, 0, 1310761, 9, 0, 1310768, 10, 0, 1441791, 10, 0, 1376304, 10, 0, 1507327, 10, 0, 1441838, 19, 0, 1441840, 10, 0, 1572863, 10, 0, 1507376, 10, 0, 1638399, 10, 0, 1572907, 19, 0, 1572912, 10, 0, 1703935, 10, 0, 1638448, 10, 0, 1769471, 10, 0, 1703984, 10, 0, 1835007, 10, 0, 1769472, 9, 0, 1769473, 9, 0, 1769474, 9, 0, 1769475, 9, 0, 1769476, 9, 0, 1769477, 9, 0, 1769478, 9, 0, 1769479, 9, 0, 1769480, 9, 0, 1769481, 9, 0, 1769482, 9, 0, 1769483, 9, 0, 1769484, 9, 0, 1769485, 9, 0, 1769486, 9, 0, 1769487, 9, 0, 1769488, 9, 0, 1769489, 9, 0, 1769490, 9, 0, 1769491, 9, 0, 1769492, 9, 0, 1769493, 9, 0, 1769494, 9, 0, 1769495, 9, 0, 1769496, 9, 0, 1769497, 9, 0, 1769498, 9, 0, 1769499, 9, 0, 1769500, 9, 0, 1769501, 9, 0, 1769502, 9, 0, 1769503, 9, 0, 1769504, 9, 0, 1769505, 9, 0, 1769506, 9, 0, 1769507, 9, 0, 1769508, 9, 0, 1769509, 9, 0, 1769510, 9, 0, 1769511, 9, 0, 1769512, 9, 0, 1769513, 9, 0, 1769514, 9, 0, 1769515, 9, 0, 1769516, 9, 0, 1769517, 9, 0, 1769518, 9, 0, 1769519, 9, 0, 1769520, 10, 0, 1900543, 10, 0, 1835008, 10, 0, 1835009, 10, 0, 1835010, 10, 0, 1835011, 10, 0, 1835012, 10, 0, 1835013, 10, 0, 1835014, 10, 0, 1835015, 10, 0, 1835016, 10, 0, 1835017, 10, 0, 1835018, 10, 0, 1835019, 10, 0, 1835020, 10, 0, 1835021, 10, 0, 1835022, 10, 0, 1835023, 10, 0, 1835024, 10, 0, 1835025, 10, 0, 1835026, 10, 0, 1835027, 10, 0, 1835028, 10, 0, 1835029, 10, 0, 1835030, 10, 0, 1835031, 10, 0, 1835032, 10, 0, 1835033, 10, 0, 1835034, 10, 0, 1835035, 10, 0, 1835036, 10, 0, 1835037, 10, 0, 1835038, 10, 0, 1835039, 10, 0, 1835040, 10, 0, 1835041, 10, 0, 1835042, 10, 0, 1835043, 10, 0, 1835044, 10, 0, 1835045, 10, 0, 1835046, 10, 0, 1835047, 10, 0, 1835048, 10, 0, 1835049, 10, 0, 1835050, 10, 0, 1835051, 10, 0, 1835052, 10, 0, 1835053, 10, 0, 1835054, 10, 0, 1835055, 10, 0, 1835056, 10, 0 )
+
+[node name="Key2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 674, 398 )
+
+[node name="Key2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 685, 176 )
+
+[node name="Key2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 593, 622 )
+
+[node name="Portal2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 71, 161 )
+
+[node name="TutorialEnemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 940, 844 )
+
+[node name="TutorialEnemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1058, 617 )
+
+[node name="TutorialEnemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 301, 618 )
+
+[node name="TutorialEnemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1148, 293 )
+
+[node name="TutorialEnemy5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 522, 392 )
+
+[node name="TutorialEnemy6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 878, 65 )
+
+[node name="TutorialEnemy7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 294, 72 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 833 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 770, 454 )
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 31.0
+margin_top = 740.0
+margin_right = 212.0
+margin_bottom = 772.0
+text = "                                              Movement
+Left: \"A\" or \"Left Arrow\" Arrow\" Key   Right: \"D\" or \"Right Arrow\" Key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 895.0
+margin_top = 744.0
+margin_right = 1019.0
+margin_bottom = 776.0
+text = "Attack: \"Space\" Key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1287.0
+margin_top = 742.0
+margin_right = 1471.0
+margin_bottom = 774.0
+text = "Jump: \"W\" or \"Up Arrow\" Key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 21.0
+margin_top = 530.0
+margin_right = 242.0
+margin_bottom = 562.0
+text = "Double Jump: Press \"W\" or \"Up Arrow\" Key Twice"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 475.0
+margin_top = 525.0
+margin_right = 712.0
+margin_bottom = 557.0
+text = "Find and Collect 3 Keys To Use Portal
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 550.0
+margin_top = 85.0
+margin_right = 823.0
+margin_bottom = 117.0
+text = "Top Right Shows Number of Keys Collected
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 869.0
+margin_top = 300.0
+margin_right = 1142.0
+margin_bottom = 332.0
+text = "Attack in Midair for a Slash Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
