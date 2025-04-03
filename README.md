@@ -1,6 +1,8 @@
 # Dungeon-Adventure
 Description:\
-Dungeon Adventure is a platformer bullet hell game where you adventure through levels. The goal is to traverse through the levels and beat the final boss.\
+Dungeon Adventure is a platformer bullet hell game
+where you adventure through levels. The goal is to traverse through the levels and 
+beat the final boss.\
 
 This was a high school Game Design class solo project during a span of 3 months.\
 Developed on Godot Game Engine using open source materials and programmed with GDScript.
